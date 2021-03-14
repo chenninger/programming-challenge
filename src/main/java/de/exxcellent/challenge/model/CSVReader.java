@@ -10,14 +10,11 @@ public class CSVReader {
    public List<String> readCSV (String pathToFile){
      List<String> result =new LinkedList<String>();
       File file = new File(pathToFile);
-       System.out.println(file.getAbsolutePath());
        try{
            Scanner inputStream = new Scanner(file);
-           inputStream.next();
-           inputStream.next();
-           inputStream.next();
+           inputStream.nextLine();
            while(inputStream.hasNext() ){
-               result.add(inputStream.next());
+               result.add(inputStream.nextLine());
            }
            inputStream.close();
        }catch (FileNotFoundException e){
